@@ -1,0 +1,24 @@
+.App {
+}
+
+.title {
+  font-family: gitHubFont;
+  text-align: center;
+  font-size: 6em;
+  color: #ffffff;
+}
+
+#search {
+  width: 30%;
+  padding-top: 5px;
+  font-size: larger;
+}
+
+#searchButton {
+  width: 30.5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: hsl(350, 71%, 51%);
+  color: #ffffff;
+  font-size: larger;
+}
