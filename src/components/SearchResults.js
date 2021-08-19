@@ -1,6 +1,7 @@
 import React from 'react';
 
-function SearchResults() {
+function SearchResults(searchUser) {
+  console.log(searchUser);
   return (
     <div async class='row'>
       <div class='col-sm-4' id='searchResult'></div>
