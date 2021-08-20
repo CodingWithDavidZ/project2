@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SearchResults from './SearchResults';
 
-function SearchBar() {
+function SearchBar(props) {
   const [searchUser, setSearchUser] = useState('');
+  const [gitObject, setGitObject] = useState('');
 
   const handleChange = (e) => {
     setSearchUser(e.target.value);
@@ -11,14 +12,14 @@ function SearchBar() {
   function handleSubmit(e) {
     e.preventDefault();
     //find name
-    const search = e.target.value;
+    const search = document.getElementById('search').value;
     //remove spaces in search query
     const originalName = search.split(' ').join('');
 
     fetch('https://api.github.com/users/' + originalName)
       .then((result) => result.json())
       .then((data) => {
-        return data;
+        props.setData(data);
       });
   }
 
@@ -41,7 +42,6 @@ function SearchBar() {
           </button>
         </div>
       </form>
-      <SearchResults searchUser={searchUser} />
     </>
   );
 }
